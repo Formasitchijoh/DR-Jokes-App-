@@ -1,0 +1,59 @@
+import { JokesItems } from "./Jokes"
+import '../styles/category.css'
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import '../Carousel/style.css'
+export default function Category(){ 
+
+    const settings = {
+        infinite: true,
+        dots: true,
+        slidesToShow: 1.5,
+        slidesToScroll: 1,
+        lazyLoad: true,
+        autoplay: true,
+      autoplaySpeed: 2000,
+       
+      };
+
+    return (
+        <>
+      {/* <div className="category"> */}
+        <Slider {...settings}>
+          {JokesItems.map((JokesItem, index) => (
+        <li className="category-item">
+           <img 
+           src={JokesItem.Category.imageUrl}
+           alt={JokesItem.Category.Description}
+           />
+           <p>{JokesItem.Category.name}</p>
+        </li>
+    ))}
+        </Slider>
+      {/* </div> */}
+          </>
+        
+    )
+}
+
+// export  function singleCategory(){
+  
+// }
+
+// const newJokes = JokesItems.map((JokesItem, index) => (
+//     <li className="category-item">
+//        <img 
+//        src={JokesItem.Category.imageUrl}
+//        alt={JokesItem.Category.Description}
+//        />
+//        <p>{JokesItem.Category.name}</p>
+//     </li>
+// ))
+// return (
+   
+//          <ul className="category">
+//           {newJokes}
+//          </ul>
+    
+// )

@@ -1,0 +1,17 @@
+
+.seemore-container{
+
+    font-size: larger;
+    font-family: sans-serif;
+   height: 50px;
+   width: 100%px;
+   border-radius: 10%;
+    border-color: black;
+    align-self: center;
+    margin-left: 800px;
+    margin-top: 50px;
+    max-width: fit-content;
+    position: relative;
+    
+
+}

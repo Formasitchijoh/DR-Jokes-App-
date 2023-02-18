@@ -1,0 +1,42 @@
+
+
+.category{
+    background-color: aqua;
+    margin-top: 150px;
+    margin-left: 400px;
+    margin-right: 300px;
+    margin-bottom: 100px;
+    padding-inline-start: 20px;
+    padding-block-start: 20px;
+    padding-block-end: 20px;
+    scroll-padding-top: 20px;
+    display: flex;
+    justify-content: center;
+    
+}
+
+#joke{
+    margin-left: 10px;
+}
+
+#circular-img{
+    border-radius: 50px;
+}
+.header-container{
+    background-color: rgb(156, 119, 238);
+    padding:50px;
+}
+.nav-bar{
+    background-color: rgb(104, 22, 210);
+    display: flex;
+    justify-content: center;
+}
+
+ul{
+   list-style-type: none;
+   padding: 0;
+   margin: 0;
+   text-align: right;
+   width: 10em;
+   display: flex;
+} 
