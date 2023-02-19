@@ -3,18 +3,20 @@
 import Navbar from './NavBar_component/NavBar';
 // import { BrowserRouter } from 'react-router-dom';
 import './index.css'
-import Category from './components/JokeCategory';
+import Categorys from './components/JokeCategory';
 import Search from './components/searchbar';
 import Joke from './components/JokeItem';
 import SeeMore from './components/seeMore';
 import Footer from './components/Footer';
+import { SingleJoke } from './components/JokeItem';
 function App() {  
+
   return (
     
     <div>
       <Navbar />
         <Search/>
-         <Category />
+         <Categorys />
          <Joke/>
       <SeeMore/>
       <Footer/> 
@@ -22,5 +24,6 @@ function App() {
     
   );
 }
+
 
 export default App;

@@ -2,40 +2,45 @@ import { JokesItems } from "./Jokes"
 import JokeIcon from "./jokeIcons"
 import '../styles/jokeitem.css'
 export default function Joke(){
-const NewJoke = JokesItems.map((JokeItem, index) => (
+    const {Category, Jokes}= JokesItems[0];
+    
+const NewJoke = Jokes.map((Joke) => (
     <li>
         <JokeIcon
-        joke={JokeItem.Jokes[index].joke}/>
+        joke={Joke.joke}/>
     </li>
  ) )
- const newOneJoke = JokesItems.filter((JokeItem) => {
-    JokeItem.Category.name = 'Family Joke'
-    return (
-      <li>
-        <img
-        src={JokeItem.Category.imageUrl}
-        alt=''>
-        </img>
-        <p>{JokeItem.Jokes.joke}</p>
-      </li>
-    )
-   
-    
-    
-})
-
+ 
     return ( 
-            <> 
-            
-            <ul className="container">
+
+            <div>
+                <SingleJoke />
+            <div className="container">
                 {NewJoke}
-            </ul>
-            {/* <div>
-                {newOneJoke[0]}
-            </div> */}
-            </>
+            </div>
+            </div>
+        
             
             
      
     )
 }
+
+const newJoke = JokesItems.map((JokesItem, index) => (
+            <div >
+                <img
+                src={JokesItem.Category.imageUrl}
+                alt='' />
+                <p>{JokesItem.Category.name}</p>
+            </div>
+))
+
+
+export function SingleJoke(){
+    return (
+        <div className="single-cat">
+            {newJoke[0]}
+        </div>
+    )
+}
+

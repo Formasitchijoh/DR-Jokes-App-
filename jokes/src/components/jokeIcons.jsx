@@ -7,7 +7,7 @@ export default function JokeIcon(props){
     return (
 
         <div className='joke-container'>
-            <p className='joke-element'>{props.joke}</p>
+            <div className='joke-element'>{props.joke}hello this is my world i dont care in case you didnt know i am trying to break you for sure</div>
          <div className='joke-icons'>
             
             <img

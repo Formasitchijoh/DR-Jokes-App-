@@ -1,8 +1,9 @@
+
 export const  JokesItems = [
-    {        id: 0 ,
+    {       
         Category:{
                     name:"Family Joke",
-                    imageUrl:"https://i.imgur.com/yXOvdOSs.jpg",
+                    imageUrl:"https://media.istockphoto.com/id/1368965646/photo/multi-ethnic-guys-and-girls-taking-selfie-outdoors-with-backlight-happy-life-style-friendship.jpg?b=1&s=170667a&w=0&k=20&c=oFtP564Ykvak2VIyM1OUb29daY5S4uqsmT3j3_8QgfQ=",
                     Description:"This is a family joke Image"
                 },
         Jokes: [
@@ -11,7 +12,7 @@ export const  JokesItems = [
            author:"Formasit chijoh",
            likes:20,
            comments:"You suck",
-           joke:"You are the only one in know that really snores",
+           joke:" that  snores the most",
 
                },
                {
@@ -19,7 +20,7 @@ export const  JokesItems = [
                   author:"Formasit chijoh",
                   likes:20,
                   comments:"You suck",
-                  joke:"You are the only one in know that really snores",
+                  joke:"Only God knows how to save use better",
 
 
                       },
@@ -28,17 +29,45 @@ export const  JokesItems = [
                       author:"Formasit chijoh",
                       likes:20,
                       comments:"You suck",
-                      joke:"You are the only one in know that really snores",
+                      joke:"I know who God sent me to this worl to be",
 
                           }
+                          ,
+                          {
+                            id : 4,
+                           author:"Formasit chijoh",
+                           likes:20,
+                           comments:"You suck",
+                           joke:"I am greatfull for all the things i am and that i am getting",
+                
+                               },
+                               {
+                                   id : 5,
+                                  author:"Formasit chijoh",
+                                  likes:20,
+                                  comments:"You suck",
+                                  joke:" one in know that really snores",
+                
+                
+                                      },
+                                      {
+                                       id : 6,
+                                      author:"Formasit chijoh",
+                                      likes:20,
+                                      comments:"You suck",
+                                      joke:"You are the only one  know that really snores",
+                
+                                          }
+                                          
+                          
         ]
    
     },
 
-    {    id: 1,
+    {   
         Category:{
                     name:"Relationship Joke",
-                    imageUrl:"https://i.imgur.com/yXOvdOSs.jpg",
+                    imageUrl:"https://www.helpguide.org/wp-content/uploads/man-holding-laughing-woman.jpg",
                     Description:"This is a family joke Image"
                 },
         Jokes: [
@@ -47,7 +76,7 @@ export const  JokesItems = [
            author:"Formasit chijoh",
            likes:20,
            comments:"You suck",
-           joke:"You are the only one in know that really snores",
+           joke:"You are the only ",
 
                },
                {
@@ -73,7 +102,7 @@ export const  JokesItems = [
     {      id: 2,
         Category:{
                     name:"African Joke",
-                    imageUrl:"https://i.imgur.com/yXOvdOSs.jpg",
+                    imageUrl:"https://images.unsplash.com/photo-1586474714722-d1f9e551cf34?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8bGF1Z2hpbmd8ZW58MHx8MHx8&w=1000&q=80",
                     Description:"This is a family joke Image"
                 },
         Jokes: [
@@ -82,7 +111,7 @@ export const  JokesItems = [
            author:"Formasit chijoh",
            likes:20,
            comments:"You suck",
-           joke:"You are the only one in know that really snores",
+           joke:"You are the only one  really snores",
 
                },
                {

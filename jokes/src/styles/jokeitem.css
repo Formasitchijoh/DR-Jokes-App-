@@ -5,13 +5,33 @@ list-style: none;
 display: inline-block;
 }
 .container{
-    background-color: rgb(229, 234, 238);
-    height: 500px;
-    max-width: 1800px;
+    background-color: rgb(253, 253, 253);
+    height: 700px;
+    width: 1800px;
     border-radius: 20px;
+    max-width: fit-content;
+    position: relative;
 
  
 }
 *{
     box-sizing: border-box;
+}
+.single-cat{
+    align-self: center;
+    margin-top: 50px;
+    margin-left: 800px;
+}
+
+@media(max-width:480px) {
+    .container{
+        width: 500px;
+        position: absolute;
+        max-width: 500px;
+    }
+
+    .container li {
+        display: inline;
+    }
+    
 }
