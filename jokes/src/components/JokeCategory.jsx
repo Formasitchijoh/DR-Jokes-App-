@@ -9,8 +9,8 @@ export default function Categorys(){
     const settings = {
         infinite: true,
         dots: true,
-        slidesToShow: 1.5,
-        slidesToScroll: 1,
+        slidesToShow: 4,
+        slidesToScroll: 2,
         lazyLoad: true,
         autoplay: true,
       autoplaySpeed: 2000,

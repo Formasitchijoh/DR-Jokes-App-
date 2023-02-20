@@ -1,12 +1,16 @@
 import { JokesItems } from "./Jokes"
 import JokeIcon from "./jokeIcons"
 import '../styles/jokeitem.css'
-export default function Joke(){
-    const {Category, Jokes}= JokesItems[0];
+import Search from "./searchbar";
+import { useState } from "react";
+
+export default function Joke(props){ 
+    const[categoryIndexHold, setcategoryHold] = useState(props.CategoryIndex)
+    const {Category, Jokes}= JokesItems[categoryIndexHold];
     
 const NewJoke = Jokes.map((Joke) => (
     <li>
-        <JokeIcon
+        <JokeIcon 
         joke={Joke.joke}/>
     </li>
  ) )
