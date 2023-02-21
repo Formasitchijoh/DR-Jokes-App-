@@ -15,9 +15,9 @@ export default function Search(props){
              </input>
 
             <button 
+            type="button"
             className="search-button"
-            onClick={props.CheckCategory}
-            handleClick={props.handleClick}
+            onClick={props.handleCategoryIndex}
                     >
             <img 
             src={search}

@@ -3,11 +3,12 @@ import JokeIcon from "./jokeIcons"
 import '../styles/jokeitem.css'
 import Search from "./searchbar";
 import { useState } from "react";
+import '../styles/seeMore.css'
 
-export default function Joke(props){ 
-    const[categoryIndexHold, setcategoryHold] = useState(props.CategoryIndex)
-    const {Category, Jokes}= JokesItems[categoryIndexHold];
+export default function Joke(props){
     
+   let index = props.CategoryIndex
+    const {Category, Jokes}= JokesItems[index];
 const NewJoke = Jokes.map((Joke) => (
     <li>
         <JokeIcon 
@@ -16,35 +17,29 @@ const NewJoke = Jokes.map((Joke) => (
  ) )
  
     return ( 
-
-            <div>
-                <SingleJoke />
-            <div className="container">
-                {NewJoke}
-            </div>
-            </div>
-        
+        <>
+        <div style={{display:!props.showMore ? "block" :"none"}} className="container">{NewJoke.slice(0,3)}</div>
+         <div style={{display:props.showMore ?"block":"none"}} className="container">{NewJoke}</div>
+        </>
             
-            
-     
     )
 }
 
-const newJoke = JokesItems.map((JokesItem, index) => (
-            <div >
-                <img
-                src={JokesItem.Category.imageUrl}
-                alt='' />
-                <p>{JokesItem.Category.name}</p>
-            </div>
+export function SingleJoke({JokesItems,CategoryIndex}){
+    const newJoke = JokesItems.map((JokesItem) => (
+        <div >
+            <img
+            src={JokesItem.Category.imageUrl}
+            alt='' />
+            <p>{JokesItem.Category.name}</p>
+        </div>
 ))
 
-
-export function SingleJoke(){
     return (
         <div className="single-cat">
-            {newJoke[0]}
+            {newJoke[CategoryIndex]}
         </div>
     )
 }
+
 

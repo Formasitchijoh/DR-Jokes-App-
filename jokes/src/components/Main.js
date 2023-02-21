@@ -5,103 +5,60 @@ import { JokesItems } from "./Jokes";
  import { useState } from "react";
  import JokeIcon from "./jokeIcons";
  import '../styles/jokeitem.css'
- import SeeMore from "./seeMore";
-
+ import { SingleJoke } from "./JokeItem";
+import SeeMore from "./seeMore";
+import Navbar from "../NavBar_component/NavBar";
 function Main() {  
-  
+
 const[selectedCategory, setSelectedCategory] = useState('')
 const[CategoryIndex, setCategoryIndex] = useState(0);
-const {Category, Jokes}= JokesItems[CategoryIndex];
-const[NewJoke, setNewJoke] = useState(Jokes.map((Joke) => (
-  <li>
-      <JokeIcon 
-      joke={Joke.joke}/>
-  </li>
-) ))
+const CategoryList = JokesItems.map(JokeItem => JokeItem.Category.name) //Return the name of all the Category from which to select from 
 const[showMore, setShowMore] = useState(false)
-const[showLess, setShowLess] = useState(true)
-
-//This is an array of all the categories
-const CategoryArray = JokesItems.map((JokeItem) => JokeItem.Category)
 
 function handleSelectedCategory(e){
   setSelectedCategory(e.target.value)
 }
+function handleCategoryIndex(){ 
 
-function CheckCategory(){ 
-  for(let i = 0 ; i < CategoryArray.length; i++){ 
-    if(CategoryArray[i].name === selectedCategory){ 
-      alert(`Gotcha + ${CategoryArray[i].name} at ${i}`)
-      setCategoryIndex(5)
+  for(let index = 0;index < CategoryList.length;index++){
+    if(CategoryList[index] === selectedCategory){
+      setCategoryIndex(index);
       break;
-    }
+    }}
   }
+function handleShowMore(){ 
+    setShowMore((prev)=>!prev)
 }
 
-function handleClick(){
-  setCategoryIndex(CategoryIndex + 1)
-}
-function handleNewJokeChange(){
-const newJoke1 = Jokes.map((Joke) => (
-  <li>
-      <JokeIcon 
-      joke={Joke.joke}/>
-  </li>
-) )
 
-  setNewJoke(newJoke1)
-}
-
-// const newSlice = NewJoke.slice(0,3);
-function handleShowMore(){
-  setShowMore(true)
-  
-}
-function handleShowLess(){
-  setShowLess(true)
-}
     return (
       
       <div>
+        <Navbar />
           <Search
            selectedCategory={selectedCategory}
            handleSelectedCategory={handleSelectedCategory}
-           CheckCategory={CheckCategory}
-           handleClick={handleClick}
-          />
+           handleCategoryIndex={handleCategoryIndex} />
            <Categorys />
            <div>
-            <SingleJoke
-            imageUrl={Category.imageUrl}
-            name={Category.name}
+            <SingleJoke 
+              JokesItems={JokesItems}
+              CategoryIndex={CategoryIndex}
             />
-            {showMore ? (<div className="container">
-              {NewJoke.slice(0,3)}</div>) 
-              : (<div className="container">{NewJoke}</div>)}
-            
+            <Joke
+           CategoryIndex={CategoryIndex}
+           showMore={showMore}
+           />
            </div>
            <SeeMore
-           handleShowMore={handleShowMore}
-           />
+           handleShowMore={handleShowMore} />
+           
+           
+          
 
       </div>
       
     );
-  }
-  
-
-export function SingleJoke(props){
-return (
-<div className="single-cat">
-<img
-      src={props.imageUrl}
-      alt='' />
-      <p>{props.name}</p>
-</div>
-)
-}
-
-
-  
+    }
   export default Main;
   
