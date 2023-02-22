@@ -42,7 +42,7 @@ function toggleTaskCompleted(id){
 }
 
 /***
- * Deleting a task fromt the list and then updating  the form
+ * Deleting a task from the list and then updating  the form
  */
 
 function deleteTask(id){

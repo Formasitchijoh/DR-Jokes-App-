@@ -2,6 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
+import Home from './components/JsonTest';
+import PostForm from './components/PostForm';
 
 const DATA = [
   {id:"todo-0", name:"Eat", completed:"true"},
@@ -12,7 +14,8 @@ const DATA = [
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App tasks={DATA}/>
+    {/* <App tasks={DATA}/> */}
+    <PostForm/>
   </React.StrictMode>
 );
 
