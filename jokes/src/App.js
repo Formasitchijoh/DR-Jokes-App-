@@ -6,6 +6,8 @@ import './index.css'
 import SeeMore from './components/seeMore';
 import Footer from './components/Footer';
 import Main from './components/Main';
+import Apps from './components/Modal/App';
+
 function App() {  
 
   return (
@@ -13,6 +15,7 @@ function App() {
     <div>
       
       <Main/> 
+      <Apps/>
       <Footer/> 
     </div>
     

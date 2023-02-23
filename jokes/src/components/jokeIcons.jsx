@@ -3,18 +3,33 @@ import laugh from '../assets/laugh.jpeg'
 import comment from '../assets/comment.png'
 import '../styles/jokeicon.css'
 import { useState } from 'react'
+import Comment from './CommentForm'
 
 export default function JokeIcon(props){ 
     const[likes, setlikes] = useState(0)
     const[laughs, setLaughs] = useState(0)
-    const[edit, setEdit] = useState('')
-
+    const[isComment, setIsComment] = useState(false);
+  
      function handleLikeClick(e){
         setlikes(likes + 1)
-        // alert(laughs)
      }
      function handleLaughsClick(){
         setLaughs(laughs + 1)
+     }
+
+     function handleComment(){
+           setIsComment((prev) => !prev);
+
+           if(isComment){
+            return(
+               <Comment/>
+            )
+           }
+           
+     }
+
+     const CommentFunction = ()=> {
+      <Comment/>
      }
 
     return (
@@ -46,6 +61,7 @@ export default function JokeIcon(props){
            src={comment}
            alt=""
            className="comment-image"
+           onClick={handleComment}
             />   
          </div>
            

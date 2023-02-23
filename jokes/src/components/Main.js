@@ -8,6 +8,7 @@ import { JokesItems } from "./Jokes";
  import { SingleJoke } from "./JokeItem";
 import SeeMore from "./seeMore";
 import Navbar from "../NavBar_component/NavBar";
+import Comment from "./CommentForm";
 function Main() {  
 
 const[selectedCategory, setSelectedCategory] = useState('')
@@ -15,6 +16,7 @@ const[CategoryIndex, setCategoryIndex] = useState(0);
 const CategoryList = JokesItems.map(JokeItem => JokeItem.Category.name) //Return the name of all the Category from which to select from 
 const[showMore, setShowMore] = useState(false)
 
+ 
 function handleSelectedCategory(e){
   setSelectedCategory(e.target.value)
 }
@@ -34,7 +36,8 @@ function handleShowMore(){
     return (
       
       <div>
-        <Navbar />
+        <Navbar 
+        index={CategoryIndex}/>
           <Search
            selectedCategory={selectedCategory}
            handleSelectedCategory={handleSelectedCategory}
@@ -52,6 +55,7 @@ function handleShowMore(){
            </div>
            <SeeMore
            handleShowMore={handleShowMore} />
+           <Comment/>
            
            
           
