@@ -9,7 +9,7 @@ export default function Categorys(){
     const settings = {
         infinite: true,
         dots: true,
-        slidesToShow: 4,
+        slidesToShow: 2,
         slidesToScroll: 2,
         lazyLoad: true,
         autoplay: true,
@@ -36,24 +36,3 @@ export default function Categorys(){
         
     )
 }
-
-// export  function singleCategory(){
-  
-// }
-
-// const newJokes = JokesItems.map((JokesItem, index) => (
-//     <li className="category-item">
-//        <img 
-//        src={JokesItem.Category.imageUrl}
-//        alt={JokesItem.Category.Description}
-//        />
-//        <p>{JokesItem.Category.name}</p>
-//     </li>
-// ))
-// return (
-   
-//          <ul className="category">
-//           {newJokes}
-//          </ul>
-    
-// )

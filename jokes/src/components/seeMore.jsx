@@ -1,4 +1,4 @@
-
+import '../styles/seeMore.css'
 export default function SeeMore(props){
     return (
         <button

@@ -3,7 +3,7 @@
     flex-direction: column;
     justify-content: center;
     width: 500px;
-    height:150px;
+    height:fit-content;
     margin-left: 100px;
     margin-top: 10px;
     background-color: rgb(232, 237, 240);
@@ -45,3 +45,8 @@
     font-weight: 300;
     margin-left: 150px;
 }
+.comment-list{
+    justify-content: center;
+    margin-left: 50px;
+}
+

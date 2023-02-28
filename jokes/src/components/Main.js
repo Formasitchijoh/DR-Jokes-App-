@@ -2,35 +2,58 @@ import Categorys from "./JokeCategory";
 import Search from "./searchbar";
 import Joke from "./JokeItem";
 import { JokesItems } from "./Jokes";
- import { useState } from "react";
- import JokeIcon from "./jokeIcons";
+ import { useEffect, useState } from "react";
  import '../styles/jokeitem.css'
  import { SingleJoke } from "./JokeItem";
 import SeeMore from "./seeMore";
 import Navbar from "../NavBar_component/NavBar";
-import Comment from "./CommentForm";
+import Apps from "./Modal/App";
 function Main() {  
 
-const[selectedCategory, setSelectedCategory] = useState('')
-const[CategoryIndex, setCategoryIndex] = useState(0);
-const CategoryList = JokesItems.map(JokeItem => JokeItem.Category.name) //Return the name of all the Category from which to select from 
+const[CategoryIndex, setCategoryIndex] = useState(1);
 const[showMore, setShowMore] = useState(false)
+const[CategoryJson, setCategoryJson] = useState([]) //used to get the category replaces CategoryList
 
- 
-function handleSelectedCategory(e){
-  setSelectedCategory(e.target.value)
+//this section deals with getting the category from the api
+let categoryUrl = "https://api.jokes.digitalrenter.com/api/categories"
+let   displayCategory;
+
+ async function PullCategory(){
+  const response = await fetch(categoryUrl)
+  const responseData = await response.json()
+  console.log(response);
+  displayCategory = responseData.map((category) => {
+    return(
+      { categoryId:category.id,categoryName:category.name}
+    )
+  })
+  console.log(displayCategory)
+  setCategoryJson(displayCategory)
+
 }
-function handleCategoryIndex(){ 
+useEffect(() =>{
+  PullCategory()
+},[])
 
-  for(let index = 0;index < CategoryList.length;index++){
-    if(CategoryList[index] === selectedCategory){
-      setCategoryIndex(index);
-      break;
-    }}
-  }
+
+//End of getting Category 
+ 
+//Contains all the handle methods
+function handleCategoryIndex(e){
+  setCategoryIndex(e.target.value)
+  // alert('Hello')
+  alert(e.target.value);
+}
+
+// const cateIndex = () => {
+  
+//   if(CategoryIndex )
+// }
+
 function handleShowMore(){ 
     setShowMore((prev)=>!prev)
 }
+
 
 
     return (
@@ -39,9 +62,9 @@ function handleShowMore(){
         <Navbar 
         index={CategoryIndex}/>
           <Search
-           selectedCategory={selectedCategory}
-           handleSelectedCategory={handleSelectedCategory}
-           handleCategoryIndex={handleCategoryIndex} />
+           handleCategoryId={handleCategoryIndex}
+           CategoryIndex={CategoryIndex}
+            />
            <Categorys />
            <div>
             <SingleJoke 
@@ -49,20 +72,20 @@ function handleShowMore(){
               CategoryIndex={CategoryIndex}
             />
             <Joke
-           CategoryIndex={CategoryIndex}
+          category_id={CategoryIndex}
            showMore={showMore}
            />
            </div>
+           <div style={{display:'flex', justifyContent:'center'}}>
            <SeeMore
            handleShowMore={handleShowMore} />
-           <Comment/>
+           <Apps/>
+           </div>
            
-           
-          
+              
 
       </div>
       
     );
     }
-  export default Main;
-  
+  export default Main

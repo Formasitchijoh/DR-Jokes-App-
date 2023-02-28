@@ -1,17 +1,16 @@
 import { Component } from "react";
 import axios from "axios";
+import '../styles/form.css'
 export default class Nav extends Component{
 
     constructor(props){
       super(props)
       this.state = {
-        id:0,
         punchline:'',
         setup:'',
         author_name:'',
         author_email:'',
-        author_id:'',
-        category_id:0
+        category_id:1
       }
     }
     //the change handler for holding the change value
@@ -22,28 +21,35 @@ export default class Nav extends Component{
     submitHandler = (e) => {
       e.preventDefault()
       console.log(this.state);
-      axios.post("https://api.jokes.digitalrenter.com/api/jokes", this.state)
+     
+      this.setState({
+        punchline:this.state.punchline,
+        setup:this.state.set,
+        author_name:this.state.author_name,
+        author_email:this.state.author_email,
+        category_id:this.state.category_id
+      });
+      axios.post(`https://api.jokes.digitalrenter.com/api/jokes`, this.state)
       .then(response => {
           console.log(response);
+          console.log(response.data)
       })
       .catch(error => {
           console.log(error);
       })
 
       this.setState({
-        id:0,
         punchline:'',
         setup:'',
         author_name:'',
         author_email:'',
-        author_id:'',
         category_id:0
       })
   }
   
   render(){
 
-    const{id, punchline,setup,author_id, author_name, author_email, category_id} = this.state
+    const{ punchline,setup, author_name, author_email, category_id} = this.state
 
   return(
     <div>
@@ -52,15 +58,7 @@ export default class Nav extends Component{
          <h2 className="add-joke-heading">
                 Add a Joke to your most Cherised Joke Site
          </h2>
-         <label className="author-label">Id</label>
-            <input
-            type="text"
-            id="new-joke"
-            name="_id"
-            className="author-name-input"
-            value={id}
-            onChange={this.ChangeHandler}
-            />
+        
             <label className="author-label">Authors Name</label>
             <input
             type="text"
@@ -78,16 +76,6 @@ export default class Nav extends Component{
             name="author_email"
             className="comment-input"
             value={author_email}
-            onChange={this.ChangeHandler}
-            />
-
-            <label className="comment-label">Author Id</label>
-            <input
-            type="text"
-            id="new-joke"
-            name="author_id"
-            className="comment-input"
-            value={author_id}
             onChange={this.ChangeHandler}
             />
 

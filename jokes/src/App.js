@@ -7,6 +7,7 @@ import SeeMore from './components/seeMore';
 import Footer from './components/Footer';
 import Main from './components/Main';
 import Apps from './components/Modal/App';
+import Joke from './components/JokeItem';
 
 function App() {  
 
@@ -15,7 +16,6 @@ function App() {
     <div>
       
       <Main/> 
-      <Apps/>
       <Footer/> 
     </div>
     

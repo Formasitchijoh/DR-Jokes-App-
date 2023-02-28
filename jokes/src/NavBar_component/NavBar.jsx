@@ -2,11 +2,13 @@
 import {  useEffect,useState } from 'react';
 import '../styles/navbar.css'
 import Nav from '../components/Nav';
-import Comment from '../components/CommentForm';
+import Form from '../components/Modal/FormModal';
+import styles from '../components/Modal/App.module.css';
+
 export default function Navbar()  { 
   const [isNavExpanded, setIsNavExpanded] = useState(false)
    const[isAdd, setIsAdd] = useState(false) 
- 
+
    function handleSetAdd(){
    setIsAdd((prev) => !prev)
   }
@@ -51,7 +53,13 @@ export default function Navbar()  {
           <li>
             <a href="/home">Comedians</a>
           </li>
-            <button onClick={handleSetAdd}>Add Joke</button>
+
+          <button onClick={handleSetAdd}>Add Joke</button>
+          {/* <div>
+          <button className={styles.primaryBtn} onClick={() => setIsOpen(true)}>Add Joke</button>
+          {isOpen && <Form  isOpen={isOpen}/>}
+          </div> */}
+           
         </ul>
       </div>
       
@@ -60,9 +68,9 @@ export default function Navbar()  {
 
     return (
       <div> 
-      {/* <div style={{display:isAdd === true?"block":"none"}}>{RenderNewJoke}</div>
-      <div style={{display:isAdd === true?"none":"block"}}>{NavBar}</div> */}
-      {isAdd?<Nav/>:NavBar}
+      <div style={{display:isAdd === true?"block":"none"}}><Nav/></div>
+      <div style={{display:isAdd === true?"none":"block"}}>{NavBar}</div>
+      {/* {isAdd?<Nav/>:NavBar} */}
       </div>
     )
   }

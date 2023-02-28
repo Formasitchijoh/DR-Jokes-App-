@@ -2,32 +2,33 @@ import "../styles/search.css"
 import search from '../assets/search.jpg'
 
 export default function Search(props){ 
-
-
     return(
-        <form className="search-container" >
-            <input
-             type="search" 
-             className="search-box"
-             value={props.selectedCategory}
-             onChange={props.handleSelectedCategory}
+        <div className="search-container" >
+           
+             <select
+             className="select-box"
+             value={props.CategoryIndex}
+             onChange={props.handleCategoryIndex}
              >
-             </input>
+                <option value='1'>Family</option>
+                <option value='2'>Relationship</option>
+                <option value='3'>Africa</option>
+                <option value='4'>Political</option>
+                <option value='5'>Emotional</option>
+             </select>
 
             <button 
-            type="button"
+            // type="submit"
+            onClick={()=> alert(props.CategoryIndex)}
             className="search-button"
-            onClick={props.handleCategoryIndex}
-                    >
+             >
             <img 
             src={search}
             alt=''
            className="search-icon"
             />
             </button>
-            
-           
-        </form>
+        </div>
     )
 }
 

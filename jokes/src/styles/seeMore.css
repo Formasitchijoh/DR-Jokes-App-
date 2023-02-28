@@ -1,16 +1,24 @@
 
 .seemore-container{
-
     font-size: larger;
     font-family: sans-serif;
    height: 50px;
-   width: 100%;
+   /* width: 100%; */
    border-radius: 10px;
     border-color: black;
     align-self: center;
-    margin-left: 800px;
-    margin-top: 50px;
+    margin-left: 50px;
+    margin-right: 10px;
     max-width: 200px;
+    cursor: pointer;
+    font-weight: 500px;
+    padding: 13px 25px;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    border: none;
+    color: white;
+    background: #7da8fe;
+    transition: all 0.25s ease;
    
     
 

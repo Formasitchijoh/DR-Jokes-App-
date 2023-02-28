@@ -1,7 +1,7 @@
 /* @src/App.module.css */
 
 .primaryBtn {
-    margin: 20px 10px;
+    /* margin: 10px 5px;
     cursor: pointer;
     font-weight: 500;
     padding: 13px 25px;
@@ -9,10 +9,27 @@
     font-size: 0.8rem;
     border: none;
     color: white;
-    background: #185adb;
-    transition: all 0.25s ease;
+    background: #a5b3cf;
+    transition: all 0.25s ease; */
+    width: 30px;
+    height: 30px;
+    margin-top: 10px;
   }
   
+  .primaryBtnn{
+     /* margin: 10px 5px; */
+    cursor: pointer;
+    font-weight: 500;
+    padding: 13px 25px;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    height: 50px;
+    border: none;
+    color: white;
+    background: #7da8fe;
+    transition: all 0.25s ease; 
+
+  }
   .primaryBtn:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 20px -10px rgba(24, 90, 219, 0.6);
