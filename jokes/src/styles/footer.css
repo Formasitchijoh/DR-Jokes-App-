@@ -1,40 +1,52 @@
-
+:root{
+    
+    --font-size:20px;
+    --border-radius:0.2em;
+    --clr-primary:#707e86;
+    --clr-secondary:#110a14
+  
+}
+body{
+    --font-size:var(var(--font-size))
+} 
 .social-media{
     display: flex;
     justify-content: center;
   align-content: space-between;
-
+  margin-top: 5em;
+   
 }
 
 .foot{
     background-color: rgb(123, 161, 233);
-    margin-top: 20px;
-    height: 200px;
-    width: 100%px;
-    max-width: fit-content;
-    border-radius: 20px;
-    padding-top: 100px;
-    max-width: 1800px;
+    margin-top: 2em;
+    height: 10em;
+    /* width: 220em; */
+    border-radius: var(--border-radius);
+    max-width: 220em;
     
 }
 .facebk{
-    height: 50px;
-    width: 50px;
-    border-radius: 10px;
+    margin-top: 2em;
+    height: 3em;
+    width: 3em;
+    border-radius: 0.8em;
      
 }
 .twitter{
-    height: 50px;
-    width: 50px;
-    border-radius: 10px;
-    margin-left: 30px;
+    margin-top: 2em;
+    height: 3em;
+    width: 3em;
+    border-radius: 0.8em;
+    margin-left: 2em;
    
 }
-.insta{
-    height: 50px;
-    width: 50px;
-    border-radius: 10px;
-    margin-left: 30px;
+.insta{ 
+    margin-top: 2em;
+    height: 3em;
+    width: 3em;
+    border-radius: 0.8em;
+    margin-left: 2em;
    
 }
 .home-pricing{
@@ -42,7 +54,68 @@
     justify-content: center;  
 }
 .home-pricing li{
-    margin-left: 30px;
-    margin-top: 10px;
+    margin-left: 2em;
+    margin-top: 0.8em;
     list-style-type: none;
+}
+@media screen and(max-width:550px) {
+    
+    body{
+        --font-size:8px
+    }
+     
+.social-media{
+    display: flex;
+    justify-content: center;
+   align-content: space-between;
+   margin-top: 5em;
+   position: fixed;
+
+}
+
+.foot{
+    background-color: rgb(123, 161, 233);
+    margin-top: 2em;
+    height: 10em;
+    border-radius: var(--border-radius);
+    max-width: 115em;
+    position: fixed;
+    bottom: 0;
+    width: fit-content;
+    /* width: 100%; */
+   
+    
+}
+.facebk{
+    margin-top: 2em;
+    height: 3em;
+    width: 3em;
+    border-radius: 0.8em;
+     
+}
+.twitter{
+    margin-top: 2em;
+    height: 3em;
+    width: 3em;
+    border-radius: 0.8em;
+    margin-left: 2em;
+   
+}
+.insta{ 
+    margin-top: 2em;
+    height: 3em;
+    width: 3em;
+    border-radius: 0.8em;
+    margin-left: 2em;
+   
+}
+.home-pricing{
+    display: flex;
+    justify-content: center;  
+}
+.home-pricing li{
+    margin-left: 2em;
+    margin-top: 0.8em;
+    list-style-type: none;
+}
 }

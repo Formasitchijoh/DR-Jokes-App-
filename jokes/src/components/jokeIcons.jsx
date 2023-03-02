@@ -18,9 +18,9 @@ export default function JokeIcon(props){
      }
      
     return (
-
-        <div className='joke-container'>
-            <div className='joke-element'>{props.punchline}</div>
+          <div className='wrap-container'>
+             <div className='joke-container'>
+            <div className='joke-element'>{props.punchline} {props.id}</div>
          <div className='joke-icons'>
             <div className='like-container'>
             <img
@@ -43,20 +43,22 @@ export default function JokeIcon(props){
             </div>
             
             <div>
-               
                <img
            src={comment}
            alt=""
            className={styles.primaryBtn} 
            onClick={() =>setIsOpen(true)}
             /> 
-            {isOpen && <Modal setIsOpen={setIsOpen} onNewComment={ props.onNewComment} commentList={props.comments} jokeId={props.id} />}
+            {isOpen && <Modal setIsOpen={setIsOpen} onNewComment={ props.onNewComment} commentList={props.comments} jokeId={props.id} pullingAfterCommenting={props.pullingAfterCommenting} />}
 
             </div>
             
          </div>
            
           </div>
+
+          </div>
+       
         
     )
 }

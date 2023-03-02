@@ -1,8 +1,16 @@
 
+
+:root{
+  --font-size:16px;
+}
+
+body{
+  --font-size:var(--font-size)
+}
 .darkBG {
     background-color: rgba(0, 0, 0, 0.2);
-    width: 300vw;
-    height: 300vh;
+    width: 230em;
+    height: 100em;
     z-index: 0;
     top: 100%;
     left: 100%;
@@ -20,14 +28,14 @@
   }
   
   .modal {
-    width: 500px;
-    height: 400px;
+    width: 50em;
+    height: 30em;
     background: white;
     color: white;
     background-color: rgb(238, 245, 245);
     z-index: 10;
-    border-radius: 16px;
-    box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.04);
+    border-radius: 1em;
+    box-shadow: 0 0.1em 1.5em 0 rgba(0, 0, 0, 0.04);
     overflow-y: scroll;
   }
   .modal ul li{
@@ -49,36 +57,39 @@
     font-size: large;
     font-weight: bold;
     color: black;
+    display: flex;
+    justify-content: center;
+    align-content: center;
   }
   
   .modalHeader {
-    height: 50px;
-    background: white;
+    height: 3em;
+    background: rgb(137, 134, 134);
     overflow: hidden;
-    border-top-left-radius: 16px;
-    border-top-right-radius: 16px;
+    border-top-left-radius: 1em;
+    border-top-right-radius: 1em;
   }
   
   .heading {
     margin: 0;
-    padding: 10px;
-    color: #2c3e50;
-    font-weight: 500;
-    font-size: 18px;
+    padding: 0.8em;
+    color: #06090b;
+    font-weight: 50em;
+    font-size: 1.2em;
     text-align: center;
   }
   
   .modalContent {
-    padding: 10px;
-    font-size: 14px;
-    color: #2c3e50;
+    padding: 0.7em;
+    font-size: 2em;
+    color: #06090b;
     text-align: center;
   }
   
   .modalActions {
     position: absolute;
-    bottom: 2px;
-    margin-bottom: 10px;
+    bottom: 0.02em;
+    margin-bottom: 10em;
     width: 100%;
   }
   
@@ -86,6 +97,7 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
+    background-color: #ff3e4e;
   }
   
   .closeBtn {
@@ -112,11 +124,11 @@
     transform: translate(-4px, 4px);
   }
   .imgButton{
-    width: fit-content;
-    height:50px;
-    margin-top: 5px;
-    margin-bottom: 5px;
-    background-color: #ffffff;
+    width:20em;
+    height:4em;
+    margin-top: 0.2em;
+    margin-bottom: 0.2em;
+    background-color: #0e3161;
   }
   
   .deleteBtn {
@@ -130,13 +142,11 @@
     color: #fff;
     background: #ff3e4e;
     transition: all 0.25s ease; */
-    width: 100px;
-    height: 50px;
-    font-size: large;
-    font-weight: 300;
-    border-radius: 10px;
-    margin-top: 30px;
-    margin-bottom: 50px;
+    width: 2.5em;
+    height: 2.5em;
+    border-radius: 0.9em;
+    /* margin-top: 2em;
+    margin-bottom: 2em; */
   }
   
   .deleteBtn:hover {
@@ -170,3 +180,26 @@
     transform: none;
     background: whitesmoke;
   }
+
+  .commentButton{
+  width: fit-content;
+  border-radius: 0.9em;
+ margin-top: 1em;
+  
+  }
+
+  .commment-input{
+    width: 28em;
+    margin-left: 4em;
+    height: 1em;
+    border-color: #06090b;
+    font-size: 1em;
+  }
+
+
+
+
+
+
+
+  

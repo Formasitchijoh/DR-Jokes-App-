@@ -3,7 +3,7 @@ import Form from "./components/Form";
 import FilterButton from "./components/FilterButton";
 import Todo from "./components/Todo";
 import  { useState } from "react";
-import { nanoid } from "nanoid"; //used to produce a unique key for each
+import { nanoid } from "nanoid"; //used to produce a unique key for each todo
 
 const FILTER_MAP = {
   All: () => true,

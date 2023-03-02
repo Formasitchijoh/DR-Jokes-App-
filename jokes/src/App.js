@@ -3,11 +3,8 @@
 import Navbar from './NavBar_component/NavBar';
 // import { BrowserRouter } from 'react-router-dom';
 import './index.css'
-import SeeMore from './components/seeMore';
-import Footer from './components/Footer';
+import Footer from './ComponentFooter/Footer';
 import Main from './components/Main';
-import Apps from './components/Modal/App';
-import Joke from './components/JokeItem';
 
 function App() {  
 
@@ -16,7 +13,7 @@ function App() {
     <div>
       
       <Main/> 
-      <Footer/> 
+      
     </div>
     
   );

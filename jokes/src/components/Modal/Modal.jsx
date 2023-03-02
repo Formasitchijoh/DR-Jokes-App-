@@ -3,13 +3,13 @@ import styles from './Modal.module.css';
 import { RiCloseLine } from "react-icons/ri";
 import {useState} from 'react'
 import axios from "axios";
-const Modal = ({setIsOpen,onNewComment,jokeId, commentList}) => { 
+const Modal = ({setIsOpen,onNewComment,jokeId, commentList, pullingAfterCommenting}) => { 
   // let commentData;
  const[comment, setComment] = useState('') 
  console.log(commentList)
 
-
 function handleCommentChange(e){
+
   setComment(e.target.value)
 }
 
@@ -17,7 +17,6 @@ function handleCommentChange(e){
 function submitComment(e){
   e.preventDefault()
   setIsOpen(false)
-  // alert(comment)
   const post = {
  comment:comment,
  joke_id:jokeId
@@ -33,10 +32,11 @@ function submitComment(e){
     console.log(error)
   }) 
  
-  
-
-
 }
+
+useEffect(()=>{
+    pullingAfterCommenting()
+})
 
 //After loading the comment i have to retrieve the comment as Mr Martin said
 
@@ -55,8 +55,8 @@ function submitComment(e){
             Add a Joke to you most Treasured site
           </div>
            <form onSubmit={submitComment} className="comment">
-            <input value={comment} onChange={handleCommentChange} className="comment-input"></input>
-           <button type="button"  style={{width:'2em', height:'2em', marginTop:"1em" }}>
+            <input value={comment} onChange={handleCommentChange} className="comment-input" style={{width:300 , height:50,}}></input>
+           <button type="button"  className={styles.commentButton} >
            <img
              src='https://png.pngtree.com/element_our/sm/20180620/sm_5b29c1e7b8dd3.jpg'
              alt=''

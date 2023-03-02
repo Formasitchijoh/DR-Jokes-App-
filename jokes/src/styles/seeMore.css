@@ -1,25 +1,59 @@
 
+:root{
+    --font-size:16px;
+}
+body{
+    --font-size:var(--font-size)
+}
+
 .seemore-container{
     font-size: larger;
     font-family: sans-serif;
-   height: 50px;
-   /* width: 100%; */
-   border-radius: 10px;
+   height: 3.5em;
+   border-radius: 0.5em;
     border-color: black;
     align-self: center;
-    margin-left: 50px;
-    margin-right: 10px;
-    max-width: 200px;
+    margin-left: 3em;
+    margin-right: 0.8em;
+    /* Max-width is good because it allows you to define the maximum width you component can take and anything below that is accepted */
+    max-width: 15em;
     cursor: pointer;
-    font-weight: 500px;
-    padding: 13px 25px;
-    border-radius: 15px;
+    font-weight: 20em;
+    padding: 0.9em 2em;
+    border-radius: 1em;
     font-size: 0.8rem;
     border: none;
     color: white;
     background: #7da8fe;
     transition: all 0.25s ease;
-   
-    
+}
 
+@media screen and(max-width:550px) {
+
+    body{
+        --font-size:8px
+    }
+    
+    .seemore-container{
+        font-size: larger;
+        font-family: sans-serif;
+       height: 3.5em;
+       border-radius: 0.5em;
+        border-color: black;
+        align-self: center;
+        margin-left: 3em;
+        margin-right: 0.8em;
+        /* Max-width is good because it allows you to define the maximum width you component can take and anything below that is accepted */
+        max-width: 15em;
+        cursor: pointer;
+        font-weight: 20em;
+        padding: 0.9em 2em;
+        border-radius: 1em;
+        font-size: 0.8rem;
+        border: none;
+        color: white;
+        background: #0d1119;
+        transition: all 0.25s ease;
+    }
+    
 }

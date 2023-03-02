@@ -1,5 +1,11 @@
 /* @src/App.module.css */
 
+:root{
+  --font-size:16px;
+}
+body{
+  --font-size:var(--font-size)
+}
 .primaryBtn {
     /* margin: 10px 5px;
     cursor: pointer;
@@ -18,7 +24,7 @@
   
   .primaryBtnn{
      /* margin: 10px 5px; */
-    cursor: pointer;
+    /* cursor: pointer;
     font-weight: 500;
     padding: 13px 25px;
     border-radius: 15px;
@@ -27,10 +33,72 @@
     border: none;
     color: white;
     background: #7da8fe;
-    transition: all 0.25s ease; 
+    transition: all 0.25s ease;  */
+    font-size: larger;
+  font-family: sans-serif;
+ height: 3.5em;
+ border-radius: 0.5em;
+  border-color: black;
+  align-self: center;
+  margin-left: 3em;
+  margin-right: 0.8em;
+  /* Max-width is good because it allows you to define the maximum width you component can take and anything below that is accepted */
+  max-width: 15em;
+  cursor: pointer;
+  font-weight: 20em;
+  padding: 0.9em 2em;
+  border-radius: 1em;
+  font-size: 0.8rem;
+  border: none;
+  color: white;
+  background: #7da8fe;
+  transition: all 0.25s ease;
 
   }
   .primaryBtn:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 20px -10px rgba(24, 90, 219, 0.6);
   }
+
+
+
+
+@media screen and(max-width:550px) {
+
+  body{
+      --font-size:8px
+  }
+  
+  .primaryBtn {
+    width: 2em;
+    height: 32em;
+    margin-top: 0.8em;
+  }
+  
+  .primaryBtnn{
+    font-size: larger;
+  font-family: sans-serif;
+ height: 3.5em;
+ border-radius: 0.5em;
+  border-color: black;
+  align-self: center;
+  margin-left: 3em;
+  margin-right: 0.8em;
+  max-width: 15em;
+  cursor: pointer;
+  font-weight: 20em;
+  padding: 0.9em 2em;
+  border-radius: 1em;
+  font-size: 0.8rem;
+  border: none;
+  color: white;
+  background: #7da8fe;
+  transition: all 0.25s ease;
+
+  }
+  .primaryBtn:hover {
+    transform: translateY(-5em);
+    box-shadow: 0em 1em 1.5em -10em rgba(24, 90, 219, 0.6);
+  }
+
+}

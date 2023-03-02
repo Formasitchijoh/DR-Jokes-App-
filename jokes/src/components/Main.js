@@ -8,6 +8,8 @@ import { JokesItems } from "./Jokes";
 import SeeMore from "./seeMore";
 import Navbar from "../NavBar_component/NavBar";
 import Apps from "./Modal/App";
+import Footer from "./Footer";
+
 function Main() {  
 
 const[CategoryIndex, setCategoryIndex] = useState(1);
@@ -58,7 +60,8 @@ function handleShowMore(){
 
     return (
       
-      <div>
+      <div>  
+        <div>
         <Navbar 
         index={CategoryIndex}/>
           <Search
@@ -81,7 +84,15 @@ function handleShowMore(){
            handleShowMore={handleShowMore} />
            <Apps/>
            </div>
-           
+         
+
+        </div>
+       
+           <div>
+            {/* <Navbar 
+        index={CategoryIndex}/> */}
+        <Footer/>
+           </div>
               
 
       </div>

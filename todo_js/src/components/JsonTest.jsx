@@ -20,7 +20,6 @@ let displayData;
    setShowPunchline(displayData)
 
    }
-
     useEffect(() => {
         PullJson()
 
