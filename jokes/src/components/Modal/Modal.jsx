@@ -6,7 +6,10 @@ import axios from "axios";
 const Modal = ({setIsOpen,onNewComment,jokeId, commentList, pullingAfterCommenting}) => { 
   // let commentData;
  const[comment, setComment] = useState('') 
+ const[newCommentList, setNewCommentList] = useState(commentList)
  console.log(commentList)
+console.log(jokeId)
+
 
 function handleCommentChange(e){
 
@@ -21,10 +24,11 @@ function submitComment(e){
  comment:comment,
  joke_id:jokeId
   }
-  
+  let commenting;
+  console.log(comment + " " +  jokeId)
   axios.post(`https://api.jokes.digitalrenter.com/api/comments`, post)
-  .then(response => response.json())
   .then(responseJson => {
+    console.log(responseJson)
     onNewComment(responseJson)
     setComment('')
   })
@@ -42,13 +46,13 @@ useEffect(()=>{
 
     return(
         <>
-        <div className={styles.darkBG} onClick={() => setIsOpen(false)} />
+        <div className={styles.darkBG} onClick={() => setIsOpen(true)} />
       <div className={styles.centered}>
         <div className={styles.modal}> 
           <div className={styles.modalHeader}>
             <h5 className={styles.heading}>DJoker</h5>
           </div>
-          <button type="button" className={styles.closeBtn} onClick={() => setIsOpen(false)}>
+          <button type="button" className={styles.closeBtn} onClick={() => setIsOpen(true)}>
             <RiCloseLine style={{ marginBottom: "-3px" }} />
           </button>
           <div className={styles.modalContent}>
@@ -56,7 +60,7 @@ useEffect(()=>{
           </div>
            <form onSubmit={submitComment} className="comment">
             <input value={comment} onChange={handleCommentChange} className="comment-input" style={{width:300 , height:50,}}></input>
-           <button type="button"  className={styles.commentButton} >
+           <button type="button"  className={styles.commentButton} onClick={submitComment} >
            <img
              src='https://png.pngtree.com/element_our/sm/20180620/sm_5b29c1e7b8dd3.jpg'
              alt=''

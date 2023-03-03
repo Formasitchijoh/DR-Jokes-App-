@@ -11,6 +11,8 @@ export default function Joke(props){
 let jokeUrl = "https://api.jokes.digitalrenter.com/api/jokes"
 let displayjoke;
 
+alert(props.category_id)
+
 function pullJokes(){
     // alert(props.category_id)
     fetch(jokeUrl)
@@ -18,7 +20,7 @@ function pullJokes(){
      .then(responseData  => {
       displayjoke = responseData.filter((response) => (
     
-            response.category_id == props.category_id
+           (response.category_id !== props.category_id) && response 
       ))
       
       console.log(displayjoke)
@@ -36,13 +38,14 @@ useEffect(() =>{
     
       const updatedJokes = showAllJoke.map(joke => {
            
-        if(joke.id === newComment.joke_id){
-          joke.comments = [newComment, ...joke.comments];
-          setRerender(true)
+        if(joke.id === newComment.data.joke_id){
+          joke.comments = [newComment.data, ...joke.comments];
+         
         }
         return joke
       });
       setAllJoke(updatedJokes)
+    //   console.log(newComment)
       console.log(showAllJoke)
    
      }

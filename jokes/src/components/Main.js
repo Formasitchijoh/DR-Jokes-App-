@@ -12,9 +12,10 @@ import Footer from "./Footer";
 
 function Main() {  
 
-const[CategoryIndex, setCategoryIndex] = useState(1);
+const[categoryIndex, setCategoryIndex] = useState(1);
 const[showMore, setShowMore] = useState(false)
-const[CategoryJson, setCategoryJson] = useState([]) //used to get the category replaces CategoryList
+const[categoryJson, setCategoryJson] = useState([]) //used to get the category replaces CategoryList
+const[categoryItem, setCategoryItem] = useState(0)
 
 //this section deals with getting the category from the api
 let categoryUrl = "https://api.jokes.digitalrenter.com/api/categories"
@@ -29,53 +30,42 @@ let   displayCategory;
       { categoryId:category.id,categoryName:category.name}
     )
   })
-  console.log(displayCategory)
-  setCategoryJson(displayCategory)
+  setCategoryJson(responseData)
+  console.log("tHIS IS THE List")
+  console.log(categoryJson)
 
 }
 useEffect(() =>{
   PullCategory()
 },[])
 
-
-//End of getting Category 
- 
-//Contains all the handle methods
-function handleCategoryIndex(e){
-  setCategoryIndex(e.target.value)
-  // alert('Hello')
-  alert(e.target.value);
-}
-
-// const cateIndex = () => {
-  
-//   if(CategoryIndex )
-// }
+console.log("Hello i am indite the ctagegoryitem and i want")
+console.log(categoryItem)
 
 function handleShowMore(){ 
     setShowMore((prev)=>!prev)
 }
-
-
-
     return (
       
       <div>  
         <div>
+
         <Navbar 
-        index={CategoryIndex}/>
+        index={categoryIndex}
+        />
           <Search
-           handleCategoryId={handleCategoryIndex}
-           CategoryIndex={CategoryIndex}
+          setCategoryItem={setCategoryItem}
+           categoryItem={categoryItem}
+           categoryList={categoryJson}
             />
            <Categorys />
            <div>
             <SingleJoke 
               JokesItems={JokesItems}
-              CategoryIndex={CategoryIndex}
+              CategoryIndex={categoryIndex}
             />
             <Joke
-          category_id={CategoryIndex}
+          category_id={categoryItem}
            showMore={showMore}
            />
            </div>

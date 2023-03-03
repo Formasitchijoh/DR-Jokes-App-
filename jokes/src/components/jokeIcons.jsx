@@ -17,6 +17,7 @@ export default function JokeIcon(props){
         setLaughs(laughs + 1)
      }
      
+   //   console.log(props.id)
     return (
           <div className='wrap-container'>
              <div className='joke-container'>

@@ -129,6 +129,8 @@ margin-right: 0;
   grid-gap:1.5em;
   background-color: rgb(252, 252, 252);
   height: 30em;
+  margin-left: 3em;
+  margin-right: 3em;
   overflow: scroll;
 }
 
